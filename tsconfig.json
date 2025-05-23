@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // Define a versão da ECMAScript para a qual o código será transpilado
+    "target": "ES2022",
+    // Define as bibliotecas padrão que o TypeScript vai utilizar
+    "lib": [
+      "ES2023"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "module": "node16",
+    // Permite interoperabilidade entre módulos CommonJS e ESModules (import/export padrão)
+    "esModuleInterop": true,
+    // Garante que a diferenciação entre maiúsculas e minúsculas em nomes de arquivos seja respeitada
+    "forceConsistentCasingInFileNames": true,
+    // Ativa todas as verificações estritas do TypeScript (como verificação de tipos e valores nulos)
+    "strict": true,
+    // Ignora a verificação de tipos nos arquivos de declaração de bibliotecas (*.d.ts),
+    "skipLibCheck": true
+  }
+}
