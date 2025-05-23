@@ -68,6 +68,11 @@ class DeliveryLogsController {
             }
         });
 
+        // Verifica se a entrega foi encontrada
+        if (!delivery) {
+            return response.status(404).json({ message: "Delivery not found" });
+        }
+
         // se o usuario é um cliente e o id do usuario for diferente do id da entrega 
         if (request.user?.role === "customer" && request.user.id !== delivery?.userId) {
             throw new AppError("The user can only view their own deliveries", 401); //usuario só pode ver seus pedidos
